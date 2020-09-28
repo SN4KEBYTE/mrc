@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie reviews classifier</title>
+</head>
+<body>
+<main>
+    <h2>Please, enter your review:</h2>
+
+    {% from "_formhelpers.html" import render_field %}
+
+    <form method="post" action="/results">
+        <dl>
+            {{ render_filed(form.movie_review, cols='30', rows='10') }}
+        </dl>
+
+        <div>
+            <input type="submit" value="Send review" name="submit_btn">
+        </div>
+    </form>
+</main>
+</body>
+</html>
