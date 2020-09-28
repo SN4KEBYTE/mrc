@@ -7,8 +7,8 @@ from mrc.review_form import ReviewForm
 from pathlib import Path
 
 
-app = Flask(__name__)
 cur_dir = Path(__file__).parent
+app = Flask(__name__, template_folder=cur_dir / 'templates')
 
 clf = load(cur_dir / 'data' / 'pkl_objects' / 'clf.pkl')
 db = ReviewDB(cur_dir / 'data' / 'reviews.sqlite')
